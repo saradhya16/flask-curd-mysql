@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <h1>welcome to home page</h1><br> {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %} {{ message }} {% endfor %} {% endif %} {% endwith %}
+    <br>
+
+    <button><a href="./add">add student</a></button>
+
+    <table border="1">
+        <th>name</th>
+        <th>age</th>
+        <th>
+            location
+        </th>
+        <th colspan="2">actions</th>
+        {% for student in students %}
+        <tr>
+
+            <td>{{student.1}}</td>
+            <td>{{student.2}}</td>
+            <td>{{student.3}}</td>
+            <td> <a href="edit/{{student.0}}">edit</a> </td>
+            <td> <a href="delete/{{student.0}}">delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

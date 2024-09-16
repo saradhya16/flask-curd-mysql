@@ -23,11 +23,10 @@ import mysql.connector
 # conn = mysql.connector.connect(user='root', password='root', host='127.0.0.1', database='crud',port='3000')
 # xamp mysql
 conn = mysql.connector.connect(
-    user='root', password='', host='127.0.0.1', database='flask')
+    user='root', password='', host='127.0.0.1', database='mysql')
 cur = conn.cursor()
 app = Flask(__name__)
 app.secret_key = 'secret key'
-
 
 @app.route('/')
 def home():
